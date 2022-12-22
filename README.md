@@ -18,4 +18,19 @@ AWS CLI
 - IDE - Integrade Development Environment 
 - Tools - VS Code, Eclipse, Atom
 
-### 
+### AWS-CLI 
+
+- aws configure = configure your aws in the region default choose and secret key id provided. 
+
+- aws s3 ls = list all bucket 
+
+### To create a bucket outside of the ``us-east-1`` region 
+
+The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region. 
+
+~~~
+aws s3api create-bucket \ 
+    --bucket my-bucket \ 
+    --region eu-west-1 \ 
+    --create-bucket-configuration LocationConstraint=eu-west-1 
+    
