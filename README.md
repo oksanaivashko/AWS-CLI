@@ -12,10 +12,10 @@ AWS CLI
 - Automation 
 
 ### 
-GUI - Grafical User Interface
-CLI - Command line Interface
-SDK - Softaware Development Environment 
-IDE - Integrade Development Environment 
-Tools - VS Code, Eclipse, Atom
+- GUI - Grafical User Interface
+- CLI - Command line Interface
+- SDK - Softaware Development Environment 
+- IDE - Integrade Development Environment 
+- Tools - VS Code, Eclipse, Atom
 
 ### 
