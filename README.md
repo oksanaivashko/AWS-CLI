@@ -18,9 +18,9 @@
 
 ### AWS-CLI 
 
-- aws configure = configure your aws in the region default choose and secret key id provided. 
+- aws configure - configure your aws with the region, access secret id and access secret key. 
 
-- aws s3 ls = list all bucket 
+- aws s3 ls - list all bucket 
 
 ### To create a bucket outside of the ``us-east-1`` region 
 
