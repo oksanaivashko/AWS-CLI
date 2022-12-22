@@ -1,7 +1,5 @@
 # AWS-CLI
-AWS CLI
 
-...
 ### What is CLI?
 - CLI is a commend-linen program that accept input to execute functions (API to AWS). 
 - AWS provides us the option of accessing thir user services with CLI.
