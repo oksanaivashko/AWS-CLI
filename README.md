@@ -39,7 +39,7 @@ aws s3api create-bucket \
     
     
 
-### To create an IAM role and instance profile (AWS CLI)
+### Create an IAM role and instance profile (AWS CLI)
 
 Create the following trust policy and save it in a text file named ec2-role-trust-policy.json.
 
@@ -70,9 +70,10 @@ aws iam create-role \
 
 
 
-### To create a security group for ec2 Instance
+### Create a security group for ec2 Instance
 
 This example creates a security group named InstanceRoleSecurityGroup 
+
 
 ~~~
 
@@ -83,11 +84,11 @@ aws ec2 create-security-group
 
 ### To get information about an IAM role 
 
-- The following get-role command gets information about the role named Test-Role: 
+- The following get-role command gets information about the role named iamInstanceRole
 
 ~~~
 aws iam get-role \ 
-    --role-name
+    --role-name iamInstanceRole
 ~~~
 
 ### Finding your security group (SG) IDs 
@@ -106,6 +107,11 @@ aws ec2 describe-security-groups
 ~~~
 
 Create ec2 with AWS-CLI 
+- With this command you will create ec2 Instance with the existing security group that was created on the previos command 
+### These command assume: 
+ 
+- you have an existing security group (was created with the previos command)
+- you have ssh key on aws your console
 ~~~
 
 aws ec2 run-instances \ 
@@ -121,13 +127,16 @@ aws ec2 run-instances \
     --security-group-ids sg-089ac8cb2447d8c78 \ 
 
     --subnet-id subnet-0d3173490a9b6aa5d \ 
+
+
 ~~~
 
-### Attach the IAM role to an existing EC2 instance that was originally launched without an IAM role 
+### Attach the IAM role to an existing EC2 instance that was originally created without an IAM role ( on the previos command)
+
 
 - You are now ready to attach the IAM role, YourNewRole, to the EC2 instance, YourInstanceId. To attach the role: 
 
-Call the associate-iam-instance-profile command to attach the instance profile, YourNewRole-Instance-Profile, for the newly created IAM role, YourNewRole, to your EC2 instance, YourInstanceId. 
+- Call the associate-iam-instance-profile command to attach the instance profile, YourNewRole-Instance-Profile, for the newly created IAM role, YourNewRole, to your EC2 instance, YourInstanceId. 
 
 ~~~
 
