@@ -20,9 +20,27 @@
 
 ### AWS-CLI 
 
-- aws configure - configure your aws with the region, access secret id and access secret key. 
+- configure your AWS-CLI with the region, access secret id and access secret key
+~~~
+aws configure
+~~~
+- to list your config file
+~~~
+ls ~/.aws/config
+~~~
 
-- aws s3 ls - list all bucket 
+- to read your config file 
+~~~
+
+cat ~/.aws/config  
+~~~
+
+
+- list all bucket 
+~~~
+aws s3 ls
+~~~
+
 
 ### To create a bucket outside of the ``us-east-1`` region 
 
@@ -122,7 +140,7 @@ aws ec2 run-instances \
 
     --instance-type t2.micro \ 
 
-    --key-name your@key \ 
+    --key-name windows@key \ 
 
     --security-group-ids sg-089ac8cb2447d8c78 \ 
 
