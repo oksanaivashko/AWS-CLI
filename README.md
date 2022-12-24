@@ -162,3 +162,8 @@ aws ec2 associate-iam-instance-profile
 --instance-id i-0a72edd38d0d7067c
 --iam-instance-profile Name=aimInstanceRole
 ~~~
+
+- Delete security group
+~~~
+aws ec2 delete-security-group --group-id sg-089ac8cb2447d8c78
+~~~
