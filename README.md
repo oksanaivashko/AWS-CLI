@@ -128,7 +128,7 @@ Create ec2 with AWS-CLI
 - With this command you will create ec2 Instance with the existing security group that was created on the previos command 
 ### These command assume: 
  
-- you have an existing security group (was created with the previos command)
+- you have an existing security group (was created with the previous command)
 - you have ssh key on aws your console
 ~~~
 
@@ -149,7 +149,7 @@ aws ec2 run-instances \
 
 ~~~
 
-### Attach the IAM role to an existing EC2 instance that was originally created without an IAM role ( on the previos command)
+### Attach the IAM role to an existing EC2 instance that was originally created without an IAM role ( on the previous command)
 
 
 - You are now ready to attach the IAM role, YourNewRole, to the EC2 instance, YourInstanceId. To attach the role: 
