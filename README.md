@@ -92,13 +92,23 @@ aws iam create-role \
 
 This example creates a security group named InstanceRoleSecurityGroup 
 
-
 ~~~
-
 aws ec2 create-security-group
  --group-name InstanceRoleSecurityGroup
  --description "This group to allow traffic for InstanceRoleSecurityGroup " 
  ~~~
+### To add a rule that allows inbound SSH traffic
+
+- The following example enables inbound traffic on TCP port 22 (SSH). If the command succeeds, no output is returned.
+
+~~~
+aws ec2 authorize-security-group-ingress \
+    --group-name MySecurityGroup \
+    --protocol tcp \
+    --port 22 \
+    --cidr 0.0.0.0\24
+~~~
+
 
 ### To get information about an IAM role 
 
@@ -132,21 +142,7 @@ Create ec2 with AWS-CLI
 - you have ssh key on aws your console
 ~~~
 
-aws ec2 run-instances \ 
-
-    --image-id ami-0b5eea76982371e91 \ 
-
-    --count 1 \ 
-
-    --instance-type t2.micro \ 
-
-    --key-name windows@key \ 
-
-    --security-group-ids sg-089ac8cb2447d8c78 \ 
-
-    --subnet-id subnet-0d3173490a9b6aa5d \ 
-
-
+aws ec2 run-instances --image-id ami-0b5eea76982371e91 --count 1 --instance-type t2.micro --key-name windows@key --security-group-ids sg-0e78ef54c22022dff  --subnet-id subnet-0d3173490a9b6aa5d 
 ~~~
 
 ### Attach the IAM role to an existing EC2 instance that was originally created without an IAM role ( on the previous command)
@@ -163,7 +159,13 @@ aws ec2 associate-iam-instance-profile
 --iam-instance-profile Name=aimInstanceRole
 ~~~
 
-- Delete security group
+### Delete security group
 ~~~
 aws ec2 delete-security-group --group-id sg-089ac8cb2447d8c78
+~~~
+
+### Delete ec2 instance
+
+~~~
+aws ec2 terminate-instances --instance-ids i-0474562cd25bf8275
 ~~~
