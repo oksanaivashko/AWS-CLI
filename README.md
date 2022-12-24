@@ -44,7 +44,7 @@ aws s3 ls
 
 ### To create a bucket outside of the ``us-east-1`` region 
 
-The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region. 
+- The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region. 
 
 ~~~
 aws s3api create-bucket \ 
@@ -59,7 +59,7 @@ aws s3api create-bucket \
 
 ### Create an IAM role and instance profile (AWS CLI)
 
-Create the following trust policy and save it in a text file named ec2-role-trust-policy.json.
+- Create the following trust policy and save it in a text file named "ec2-role-trust-policy.json"
 
 ~~~
 
@@ -90,7 +90,7 @@ aws iam create-role \
 
 ### Create a security group for ec2 Instance
 
-This example creates a security group named InstanceRoleSecurityGroup 
+- This example creates a security group named InstanceRoleSecurityGroup 
 
 ~~~
 aws ec2 create-security-group
