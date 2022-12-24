@@ -78,6 +78,7 @@ aws s3api create-bucket \
 ~~~
 
 ### Create the IAM Instance Role 
+- Now, once we have the policies created, we can create IAM Instance Role 
 
 
 ~~~
