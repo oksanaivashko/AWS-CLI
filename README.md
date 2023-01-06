@@ -51,9 +51,9 @@ aws s3 cp LocalfileName s3://bucketName
 ~~~
 
 
-### To create a bucket outside of the ``us-east-1`` region 
+- To create a bucket outside of the ``us-east-1`` region 
 
-- The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region. 
+(The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region.)
 
 ~~~
 aws s3api create-bucket \ 
