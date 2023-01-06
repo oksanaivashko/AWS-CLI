@@ -35,10 +35,19 @@ ls ~/.aws/config
 cat ~/.aws/config  
 ~~~
 
+### S3 Bucket
 
 - list all bucket 
 ~~~
 aws s3 ls
+~~~
+- To list all the files inside S3 bucket
+~~~
+aws mb s3://bucketName
+~~~
+- To copy file to S3 Bucket 
+~~~
+aws s3 cp LocalfileName s3://bucketName
 ~~~
 
 
@@ -79,6 +88,10 @@ aws s3api create-bucket \
 
 ### Create the IAM Instance Role 
 - Now, once we have the policies created, we can create IAM Instance Role 
+~~~
+aws iam create-role --role-name IamInstanceRole --assume-role-policy-document file://ec2-role-trust-policy.jason
+~~~
+
 
 
 ~~~
@@ -169,4 +182,9 @@ aws ec2 delete-security-group --group-id sg-089ac8cb2447d8c78
 
 ~~~
 aws ec2 terminate-instances --instance-ids i-0474562cd25bf8275
+~~~
+- Create Instance profile 
+
+~~~
+aws iam create-instance-profile --instance-profile-name AWS-CLI-Instance
 ~~~
