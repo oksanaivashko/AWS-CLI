@@ -35,6 +35,17 @@ ls ~/.aws/config
 cat ~/.aws/config  
 ~~~
 
+### Create ec2 key
+
+~~~
+aws ec2 create-key-pair --key-name=oksana
+~~~
+### Delete ec2 key
+~~~
+aws ec2 delete-key-pair --key-name=oksana
+~~~
+
+
 ### S3 Bucket
 
 - list all bucket 
@@ -51,7 +62,7 @@ aws s3 cp LocalfileName s3://bucketName
 ~~~
 
 
-- To create a bucket outside of the ``us-east-1`` region 
+- To create a bucket outside of the ``us-east-1` region 
 
 (The following create-bucket example creates a bucket named my-bucket in the eu-west-1 region. Regions outside of us-east-1 require the appropriate LocationConstraint to be specified in order to create the bucket in the desired region.)
 
